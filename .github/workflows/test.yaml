@@ -3,7 +3,7 @@ on: [push]
  
 jobs:
   build3_8:
-    name: Run Python Tests and Coverage
+    name: Run tests, check coverage and apply linting.
     runs-on: ubuntu-latest
  
     steps:
