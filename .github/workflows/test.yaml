@@ -25,7 +25,8 @@ jobs:
         python3 -m pip install --upgrade pip
         pip3 install .[test]
  
-    - name: Test with pytest
+    - name: Test with pytest, coverage and pylint
       run: |
         pytest tests
         coverage report
+        pylint
