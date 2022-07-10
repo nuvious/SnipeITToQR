@@ -25,7 +25,10 @@ jobs:
         python3 -m pip install --upgrade pip
         pip3 install .[test]
  
-    - name: Test with pytest, coverage and pylint
+    - name: Test with pytest/coverage
       run: |
         pytest tests
-        pylint
+    
+    - name: Check linting
+      run: |
+        pylint src/
