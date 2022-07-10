@@ -1,3 +1,6 @@
+"""
+Setup file for the snipeittoqr package
+"""
 from setuptools import find_packages, setup
 
 REQUIREMENTS = open('requirements.txt', encoding='utf8').readlines()

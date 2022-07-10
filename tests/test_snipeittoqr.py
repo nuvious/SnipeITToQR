@@ -82,5 +82,5 @@ def test_process_file(mock_json_load, mock_process_tag):
 
 @patch('snipeittoqr.process_file')
 def test_process_directory(mock_process_file):
-    process_directory(dir='tests/files')
+    process_directory(target_dir='tests/files')
     assert mock_process_file.call_count == 1

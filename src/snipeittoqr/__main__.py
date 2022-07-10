@@ -1,9 +1,16 @@
+"""
+Main process logic for the snipeittoqr package which is mapped to the
+snipe-it-to-qr application.
+"""
 import argparse
 
 from snipeittoqr import process_directory
 
 
 def main():
+    """
+    Main application logic mapped to the snipe-it-to-qr entrypoint.
+    """
     parser = argparse.ArgumentParser()
     parser.add_help("""
     Processes a directory passed to the application creating QR codes for every
@@ -12,7 +19,7 @@ def main():
     by the SVG factories of the qrcode library.""")
     parser.add_argument(
         "-d", "--asset-json-directory", type=str, default="/workspace",
-        help="A directory containfing json exports of Snipe IT assets.")
+        help="A directory containing json exports of Snipe IT assets.")
     parser.add_argument(
         "-t", "--tenant-url", type=str, default=None,
         help=("""
@@ -23,9 +30,9 @@ url qr codes. Will generate urls in the format:
 TENANT_URL/hardware/bytag?assetTag=ASSET_TAG""")
     )
     args, unknown_args = parser.parse_known_args()
-    dir = args.asset_json_directory
+    target_dir = args.asset_json_directory
     url = args.tenant_url
-    process_directory(dir, url=url, **vars(unknown_args))
+    process_directory(target_dir, url=url, **vars(unknown_args))
 
 
 if __name__ == "__main__":

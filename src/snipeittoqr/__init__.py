@@ -1,3 +1,7 @@
+"""
+Main module for snipeittoqr which contains processing functions used by the
+__main__ process.
+"""
 import os
 import glob
 import json
@@ -74,7 +78,7 @@ def process_file(json_path, **kwargs):
         process_tag(tag, **kwargs)
 
 
-def process_directory(dir=None, output_dir=None, **kwargs):
+def process_directory(target_dir=None, output_dir=None, **kwargs):
     """
     Processes a directory which contains Snipe IT asset exports.
 
@@ -88,16 +92,15 @@ def process_directory(dir=None, output_dir=None, **kwargs):
             and if that is not specified it defaults to the export directory
             under the subfolder specified by snipeittoqr.DEFAULT_OUTPUT_DIR.
     """
-    cwd = os.getcwd()
-    dir = (
+    target_dir = (
         os.environ.get("WORKSPACE_DIR", os.getcwd())
-        if not dir
-        else dir
+        if not target_dir
+        else target_dir
     )
     output_dir = (
         os.environ.get("OUTPUT_DIR", os.getcwd())
         if not output_dir
-        else os.path.join(dir, DEFAULT_OUTPUT_DIR)
+        else os.path.join(target_dir, DEFAULT_OUTPUT_DIR)
     )
-    for f in glob.glob(os.path.join(dir, "*.json"), recursive=True):
-        process_file(f, output_dir=output_dir, **kwargs)
+    for file in glob.glob(os.path.join(target_dir, "*.json"), recursive=True):
+        process_file(file, output_dir=output_dir, **kwargs)
