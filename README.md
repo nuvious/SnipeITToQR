@@ -66,7 +66,7 @@ encoded as well as [Asset Tag]_URL.svg for the direct url link to the asset.
 docker build -t snipe-it-to-qr .
 ```
 
-### Usage
+### Docker Usage
 
 ```bash
 docker run --rm -it -v /path/to/exports:/workspace snipe-it-to-qr [ADDITIONAL ARGS]

@@ -68,14 +68,15 @@ def process_file(json_path, **kwargs):
     Args:
         json_path (str): Path to json Stipe IT asset export
     """
-    data = json.load(open(json_path, encoding='utf8'))
-    asset_tags = [
-        asset.get('Asset Tag')
-        for asset in data.get('data', [])
-        if asset.get('Asset Tag') # Ignore empty strings and None
-    ]
-    for tag in asset_tags:
-        process_tag(tag, **kwargs)
+    with open(open(json_path, encoding='utf8')) as json_file:
+        data = json.load(json_file)
+        asset_tags = [
+            asset.get('Asset Tag')
+            for asset in data.get('data', [])
+            if asset.get('Asset Tag') # Ignore empty strings and None
+        ]
+        for tag in asset_tags:
+            process_tag(tag, **kwargs)
 
 
 def process_directory(target_dir=None, output_dir=None, **kwargs):
