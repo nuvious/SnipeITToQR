@@ -1,3 +1,6 @@
+"""
+Unit tests for snipeittoqr module
+"""
 from unittest.mock import MagicMock, patch, mock_open
 
 import qrcode
@@ -28,6 +31,9 @@ TEST_EXPORT_DATA = {
 
 @patch('qrcode.make')
 def test_make_tag(mock_qrcode_make):
+    """
+    Test for make_tag
+    """
     fake_data = "fubar"
     fake_path = "~/tag.svg"
     methods={
@@ -48,6 +54,9 @@ def test_make_tag(mock_qrcode_make):
 
 @patch('snipeittoqr.make_tag')
 def test_process_tag(mock_make_tag):
+    """
+    test for process_tag
+    """
     fake_tag = "fubar"
     cases = [
         {
@@ -73,6 +82,9 @@ def test_process_tag(mock_make_tag):
 @patch('snipeittoqr.process_tag')
 @patch('json.load')
 def test_process_file(mock_json_load, mock_process_tag):
+    """
+    test for process_file
+    """
     mock_json_load.return_value = TEST_EXPORT_DATA
     with patch("builtins.open", mock_open()) as _:
         process_file("/some/path")
@@ -82,5 +94,8 @@ def test_process_file(mock_json_load, mock_process_tag):
 
 @patch('snipeittoqr.process_file')
 def test_process_directory(mock_process_file):
+    """
+    test for process_directory
+    """
     process_directory(target_dir='tests/files')
     assert mock_process_file.call_count == 1

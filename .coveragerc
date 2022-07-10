@@ -1,11 +1,10 @@
 [run]
 source = 
     src/snipeittoqr
-omit =
-    # Omit main files
-    */__main__.py
 
 [report]
+exclude_lines =
+    if __name__ == "__main__":
 fail_under = 90
 skip_covered = true
 show_missing = true

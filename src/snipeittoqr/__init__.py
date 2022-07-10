@@ -99,9 +99,13 @@ def process_directory(target_dir=None, output_dir=None, **kwargs):
         else target_dir
     )
     output_dir = (
-        os.environ.get("OUTPUT_DIR", os.getcwd())
+        os.environ.get(
+            "OUTPUT_DIR", os.path.join(target_dir, DEFAULT_OUTPUT_DIR)
+        )
         if not output_dir
         else os.path.join(target_dir, DEFAULT_OUTPUT_DIR)
     )
+    print(target_dir)
+    print(output_dir)
     for file in glob.glob(os.path.join(target_dir, "*.json"), recursive=True):
         process_file(file, output_dir=output_dir, **kwargs)

@@ -41,7 +41,7 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "snipeit-to-qr=snipeittoqr.__main__:main"
+            "snipe-it-to-qr=snipeittoqr.__main__:main"
         ],
     },
     zip_safe=False,
