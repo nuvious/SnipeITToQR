@@ -13,3 +13,9 @@ venv
 
 # coverage reports
 .coverage
+
+# Pycache directories
+__pycache__
+
+# pytest stuff
+.pytest_cache
