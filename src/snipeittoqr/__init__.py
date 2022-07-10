@@ -68,7 +68,7 @@ def process_file(json_path, **kwargs):
     Args:
         json_path (str): Path to json Stipe IT asset export
     """
-    with open(open(json_path, encoding='utf8')) as json_file:
+    with open(json_path, encoding='utf8') as json_file:
         data = json.load(json_file)
         asset_tags = [
             asset.get('Asset Tag')
