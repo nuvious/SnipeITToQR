@@ -25,9 +25,13 @@ jobs:
         python3 -m pip install --upgrade pip
         pip3 install .[test]
  
-    - name: Test with pytest/coverage
+    - name: Run pytest
       run: |
-        pytest tests
+        pytest tests --cov
+    
+    - name: Check coverage
+      run: |
+        coverage report
     
     - name: Check linting
       run: |
