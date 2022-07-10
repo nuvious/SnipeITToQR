@@ -3,7 +3,7 @@ on: [push]
  
 jobs:
   build3_8:
-    name: Run tests, check coverage and apply linting.
+    name: Python 3.8 Tests
     runs-on: ubuntu-latest
  
     steps:
@@ -28,7 +28,7 @@ jobs:
       run: |
         pylint src/
   build3_9:
-    name: Run Python Tests and Coverage
+    name: Python 3.9 Tests
     runs-on: ubuntu-latest
  
     steps:
@@ -53,7 +53,7 @@ jobs:
       run: |
         pylint src/
   build3_10:
-    name: Run Python Tests and Coverage
+    name: Python 3.10 Tests
     runs-on: ubuntu-latest
  
     steps:
