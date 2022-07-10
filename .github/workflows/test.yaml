@@ -28,5 +28,4 @@ jobs:
     - name: Test with pytest, coverage and pylint
       run: |
         pytest tests
-        coverage report
         pylint
