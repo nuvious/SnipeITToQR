@@ -1,0 +1,79 @@
+name: Tests
+on: [push]
+ 
+jobs:
+  build3_8:
+    name: Python 3.8 Tests
+    runs-on: ubuntu-latest
+ 
+    steps:
+ 
+    - uses: actions/checkout@v2
+ 
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.8"
+ 
+    - name: Install Python dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        pip3 install .[test]
+ 
+    - name: Run pytest and coverage
+      run: |
+        pytest --cov tests
+    
+    - name: Check linting
+      run: |
+        pylint src/
+  build3_9:
+    name: Python 3.9 Tests
+    runs-on: ubuntu-latest
+ 
+    steps:
+ 
+    - uses: actions/checkout@v2
+ 
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.9"
+ 
+    - name: Install Python dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        pip3 install .[test]
+ 
+    - name: Run pytest and coverage
+      run: |
+        pytest --cov tests
+    
+    - name: Check linting
+      run: |
+        pylint src/
+  build3_10:
+    name: Python 3.10 Tests
+    runs-on: ubuntu-latest
+ 
+    steps:
+ 
+    - uses: actions/checkout@v2
+ 
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.10"
+ 
+    - name: Install Python dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        pip3 install .[test]
+ 
+    - name: Run pytest and coverage
+      run: |
+        pytest --cov tests
+    
+    - name: Check linting
+      run: |
+        pylint src/

@@ -1,0 +1,39 @@
+{
+    "header": [
+        [
+            "Asset Name",
+            "Asset Tag",
+            "Serial",
+            "Model",
+            "Category",
+            "Status",
+            "Checked Out To",
+            "Location",
+            "Purchase Cost"
+        ]
+    ],
+    "data": [
+        {
+            "Asset Name": "Logitech K400+ 001",
+            "Asset Tag": "TEST00001",
+            "Serial": "",
+            "Model": "Logitech K400+ Wireless Keyboard",
+            "Category": "PC Peripherals",
+            "Status": "Ready to Deploy",
+            "Checked Out To": "",
+            "Location": "Home",
+            "Purchase Cost": ""
+        },
+        {
+            "Asset Name": "",
+            "Asset Tag": "",
+            "Serial": "",
+            "Model": "",
+            "Category": "",
+            "Status": "",
+            "Checked Out To": "",
+            "Location": "",
+            "Purchase Cost": 0
+        }
+    ]
+}

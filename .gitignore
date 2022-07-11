@@ -1,0 +1,22 @@
+# Used in development to test container
+workspace/
+
+# Ignore Visual Studios Code configuration
+.vscode/
+
+# Ignore common python venvs
+.venv
+venv
+
+# .egg-info used when developing
+*.egg-info
+
+# coverage reports
+.coverage
+
+# Pycache directories
+__pycache__
+
+# pytest stuff
+.pytest_cache
+*.svg
